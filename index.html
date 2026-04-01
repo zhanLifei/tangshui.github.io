@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>糖水配方</title>
+    <!-- 引入jQuery -->
+    <script src="./jquery-3.6.0.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Microsoft YaHei', sans-serif;
+      }
+
+      body {
+        background: #f5f5f5;
+        max-width: 750px;
+        margin: 0 auto;
+      }
+      .hide {
+        display: none;
+      }
+      /* 页面头部 */
+      .shop-header {
+        background: #ff4f4f;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        display: flex;
+      }
+      .shop-header .title {
+        flex: 1;
+      }
+
+      /* 主体容器：左分类 + 右商品 */
+      .container {
+        display: flex;
+        height: calc(100vh - 55px);
+        overflow: hidden;
+      }
+
+      /* 左侧分类栏 */
+      .category {
+        width: 90px;
+        background: #fff;
+        overflow-y: auto;
+        border-right: 1px solid #eee;
+      }
+
+      .category-item {
+        padding: 15px 10px;
+        text-align: center;
+        font-size: 14px;
+        color: #333;
+        cursor: pointer;
+      }
+
+      .category-item.active {
+        background: #f5f5f5;
+        color: #ff4f4f;
+        font-weight: bold;
+        border-left: 3px solid #ff4f4f;
+      }
+
+      /* 右侧商品列表 */
+      .goods-wrap {
+        flex: 1;
+        overflow-y: auto;
+        padding: 10px;
+      }
+
+      .goods-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin: 10px 0;
+        color: #333;
+      }
+
+      .goods-item {
+        display: flex;
+        background: #fff;
+        border-radius: 8px;
+        padding: 10px;
+        margin-bottom: 10px;
+        align-items: center;
+      }
+
+      .goods-img {
+        width: 70px;
+        height: 70px;
+        border-radius: 6px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+
+      .goods-info {
+        flex: 1;
+      }
+
+      .goods-name {
+        font-size: 15px;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .goods-desc {
+        font-size: 12px;
+        color: #999;
+        margin-bottom: 6px;
+      }
+
+      .goods-price {
+        font-size: 16px;
+        color: #ff4f4f;
+        font-weight: bold;
+      }
+      .detail {
+        background-color: #fff;
+        height: calc(100vh - 55px);
+        padding: 10px;
+      }
+      .detail .title {
+        font-weight: 600;
+      }
+      .detail .remark {
+        color: #999;
+      }
+      .detail p {
+        margin-top: 20px;
+      }
+      
+      /* 弹窗遮罩 */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        z-index: 999;
+      }
+      /* 底部弹窗容器 */
+      .bottom-modal {
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        border-radius: 20px 20px 0 0;
+        padding: 20px;
+        box-sizing: border-box;
+        transition: bottom 0.3s ease;
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+      .bottom-modal.show {
+        bottom: 0;
+      }
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      .modal-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .close-btn {
+        font-size: 24px;
+        cursor: pointer;
+        color: #666;
+      }
+      .calc-row {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      .total-row {
+        color: #ff4444;
+      }
+      .calc-row label {
+        display: inline-block;
+        width: 100px;
+      }
+      .scale-input {
+        margin: 5px 0;
+      }
+      .scale-input label {
+        display: inline-block;
+        width: 100px;
+      }
+      .scale-input input {
+        width: 100px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 头部 -->
+    <div class="shop-header">
+      <span id="balck_btn" class="hide">返回</span>
+      <div class="title">糖水配方</div>
+      <span id="calculator_btn" class="hide">计算器</span>
+    </div>
+
+    <!-- 主体 -->
+    <div class="container">
+      <!-- 左侧分类 -->
+      <div class="category" id="category_id">
+        
+      </div>
+
+      <!-- 右侧商品 -->
+      <div class="goods-wrap" id="goods_wrap_id">
+        
+      </div>
+    </div>
+
+    <!-- 详情 -->
+    <div class="detail hide">
+      <div class="title"></div>
+      <div class="remark"></div>
+      <p></p>
+    </div>
+
+    <!-- 计算器底部弹窗 -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="bottom-modal" id="bottomModal">
+      <div class="modal-header">
+        <span class="modal-title">配方计算器</span>
+        <span class="close-btn" id="closeModal">&times;</span>
+      </div>
+      <!-- 计算 -->
+      <label>请输入换算</label>
+      <div id="calcListNew">
+       
+      </div>
+      <div style="display: flex;justify-content: space-between;margin-top: 20px;margin-top: 20px;border-top: 1px solid #ccc;padding: 10px 0 0 0;">
+        <div>
+          <label>原配方</label>
+          <div class="calc-row total-row" id="calcList1"></div>
+        </div>
+        <div>
+          <label>换算后配方</label>
+          <div class="calc-row total-row" id="calcList2"></div>
+        </div>
+      </div>
+      
+    </div>
+    <script>
+      // 全部数据
+      let categoryList = [
+        {
+          title: '传统糖水基底',
+          target: 'hot',
+          list: [
+            {
+              name: '白果',
+              url: "",
+              remark: null,
+              explain: '白果100克清洗一遍，加入200克水煮沸疼后剥皮，对边切开去心，放清水泡2天，5个小时换一次水:卖不完的放了冰箱第二天要加热才能用。',
+              isCalculator: false,
+              detailList: []
+            }
+          ]
+        },
+        {
+          title: '新中式奶基底',
+          target: 'rice',
+          list: [
+            {
+              name: '龙眼冰底',
+              url: "",
+              remark: null,
+              explain: '牛奶100克，淡奶油20克，厚椰乳100克，龙眼肉500克。',
+              isCalculator: true,
+              detailList: [
+                {
+                  name: '龙眼肉',
+                  gram: '500'
+                },
+                {
+                  name: '牛奶',
+                  gram: '100'
+                },
+                {
+                  name: '淡奶油',
+                  gram: '20'
+                },
+                {
+                  name: '厚椰乳',
+                  gram: '100'
+                }
+              ]
+            },
+            {
+              name: '椰乳基底',
+              url: "",
+              remark: null,
+              explain: '产地椰乳250克，欧可生椰乳250克，高达椰浆200克',
+              isCalculator: true,
+              detailList: [
+                {
+                  name: '产地椰乳',
+                  gram: '250'
+                },
+                {
+                  name: '欧可生椰乳',
+                  gram: '250'
+                },
+                {
+                  name: '高达椰浆',
+                  gram: '200'
+                }
+              ]
+            },
+            {
+              name: '双皮奶',
+              url: "",
+              remark: '0-5度冰箱保存3天',
+              explain: '300克糖水，200克椰浆，100克椰乳，300克牛奶，糖15克，炼奶10克，冰勃朗20克子粉20克，搅拌均匀。',
+              isCalculator: true,
+              detailList: [
+                {
+                  name: '水',
+                  gram: '2500'
+                },
+                {
+                  name: '桃胶',
+                  gram: '500'
+                },
+                {
+                  name: '石蜂糖',
+                  gram: '150'
+                },
+                {
+                  name: '冰糖',
+                  gram: '150'
+                }
+              ]
+            }
+          ]
+        }
+      ]
+      //当前数据
+      let currentlyDatail = {}
+      let demoGeneral_grid = {
+        // 初始化事件
+        bindEvent: function () {
+          // 1. 分类切换
+          $('#category_id').on('click', '.category-item', function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            let target = $(this).data('target')
+            $('.goods-list').hide()
+            // 对应分类显示
+            $('#' + target).show()
+            demoGeneral_grid.initRightFn()
+          })
+          
+          // 返回
+          $('#balck_btn').on('click', function () {
+            $(this).hide()
+            $('#calculator_btn').hide()
+            $('.container').show()
+            $('.detail').hide()
+            $('.title').text('糖水配方')
+            currentlyDatail = {}  //清空当前数据
+          })
+          // 计算器
+          $('#calculator_btn').on('click', function (e) {
+            e.preventDefault()
+            $('#modalOverlay').show()
+            $('#bottomModal').addClass('show')
+            demoGeneral_grid.calculatorFn(currentlyDatail)
+          })
+
+          // 关闭弹窗
+          function closeModal() {
+            $('#bottomModal').removeClass('show')
+            setTimeout(() => {
+              $('#modalOverlay').hide()
+            }, 300) // 等待动画结束
+          }
+          $('#closeModal,#modalOverlay').on('click', closeModal)
+        },
+        init: function () {
+          // 初始化左侧数据
+          demoGeneral_grid.initLeftFn()
+          // 初始化右侧数据
+          demoGeneral_grid.initRightFn()
+        },
+        // 初始化左侧数据
+        initLeftFn: function(){
+          $("#category_id").empty()
+          let html = ''
+          $.each(categoryList, function(index, item){
+            if(index == 0){
+              html += `<div class="category-item active" data-target="${item.target}" data-index="${index}">${item.title}</div>`
+            } else {
+              html += `<div class="category-item" data-target="${item.target}" data-index="${index}">${item.title}</div>`
+            }
+          })
+          $("#category_id").html(html)
+        },
+        // 初始化右侧数据
+        initRightFn: function(){
+          let index = $("#category_id").find(".category-item.active").attr("data-index")
+          $("#goods_wrap_id").empty()
+          let html = ''
+          html += `<div class="goods-list"><div class="goods-title">${categoryList[index].title}</div>`
+          $.each(categoryList[index].list, function(index, item){
+            html += `<div class="goods-item" onclick="demoGeneral_grid.detailClick(this, ${demoGeneral_grid.escapeData(JSON.stringify(item))})">
+                        <img src="${item.url}" class="goods-img" />
+                        <div class="goods-info">
+                          <div class="goods-name">${item.name}</div>
+                          <div class="goods-desc">${item.remark??''}</div>
+                        </div>
+                      </div>`
+          })
+          html += `</div>`
+          $("#goods_wrap_id").html(html)
+        },
+        // 点击糖水详情
+        detailClick: function(that, obj){
+          currentlyDatail = obj
+          $('.container').hide()
+          $('.detail').show()
+          let names = $(that).find('.goods-name').text()
+          $('.title').text(names)
+          $('#balck_btn').show()
+          if(obj.isCalculator){
+            $('#calculator_btn').show()
+          }
+          $(".detail").find('.title').text(obj.name)
+          $(".detail").find('.remark').text(`${obj.remark??""}`)
+          $(".detail").find('p').text(obj.explain)
+        },
+        // 计算器
+        calculatorFn: function(data){
+          if(data.detailList.length == 0) {
+            $("#calcListNew").empty()
+            $("#calcList1").empty()
+            return false
+          }
+          let html1 = `<div class="scale-input">
+                      <label>${data.detailList[0].name}：</label>
+                      <input type="number" onkeyup="this.value=this.value.replace(/\D/g, '')" oninput="demoGeneral_grid.onInput(this, 0, ${demoGeneral_grid.escapeData(JSON.stringify(data))})" value="${data.detailList[0].gram}" min="1" />
+                      克
+                    </div>`
+          $("#calcListNew").html(html1)
+
+          let html2 = ''
+          $("#calcList1").empty()
+          $.each(data.detailList, function(index, item){
+            html2 += `<div>
+                      <label>${item.name}：</label>
+                      <span >${item.gram} 克</span>
+                    </div>`
+          })
+          $("#calcList1").html(html2)
+        },
+        // 计算
+        onInput: function(that, index, data){
+          let value = $(that).val()
+          let itemVal = data.detailList[index].gram
+          let rate = value/itemVal
+          let html3 = ''
+          $("#calcList2").empty()
+          $.each(data.detailList, function(index, item){
+            html3 += `<div>
+                      <label>${item.name}：</label>
+                      <span >${Math.ceil(item.gram*rate)} 克</span>
+                    </div>`
+          })
+          $("#calcList2").html(html3)
+        },
+        /**
+         * 转义特殊字符的工具方法
+         * @param str 数据
+         */
+        escapeData: function (str) {
+            if (!str) return '';
+            return str.replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+        }
+      }
+      $(function () {
+        //绑定事件
+        demoGeneral_grid.bindEvent()
+        // 初始化方法
+        demoGeneral_grid.init();
+      })
+    </script>
+  </body>
+</html>
