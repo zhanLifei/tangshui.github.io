@@ -209,6 +209,37 @@
         width: 100px;
         padding: 5px;
       }
+      /* 已登录界面 */
+      .main{text-align:center;display:none;padding:20px}
+      .main.show{display:block}
+      .main h2{margin-bottom:12px;color:#333}
+      .main p{color:#666;margin-bottom:20px}
+      .logoutBtn{padding:10px 24px;background:#ff4d4f;color:white;border:none;border-radius:8px}
+
+      /* 遮罩 */
+      .mask{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index: 999;}
+      .mask.hide{display:none}
+
+      /* 密码框 */
+      .lock-box{width:320px;background:#fff;border-radius:16px;overflow:hidden;padding-bottom:12px;position: relative;}
+      .paswword-tisp{
+        position: absolute;
+        font-size: 12px;
+        top: 41px;
+        width: 100%;
+        text-align: center;
+        color: #ff4444;
+      }
+      .lock-title{padding:20px;text-align:center;font-size:16px;color:#333}
+      .pwd-input{display:flex;justify-content:center;gap:12px;margin:0 auto 20px;padding:0 20px}
+      .dot{width:14px;height:14px;border-radius:50%;border:1px solid #ddd}
+      .dot.active{background:#333}
+
+      /* 键盘 */
+      .keyboard{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 16px}
+      .key{height:56px;display:flex;align-items:center;justify-content:center;font-size:24px;border-radius:12px;background:#f7f8fa;border:none}
+      .key:active{background:#e5e6eb}
+      .key.del{font-size:16px;color:#666}
     </style>
   </head>
   <body>
@@ -264,6 +295,22 @@
       </div>
       
     </div>
+    <div class="mask hide" id="mask">
+      <div class="lock-box">
+        <div class="lock-title">请输入密码</div>
+        <div class="paswword-tisp hide"></div>
+        <div class="pwd-input">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <div class="keyboard" id="keyboard"></div>
+      </div>
+    </div>
     <script src="./js/index.js"></script>
+    <script src="./js/paswword.js"></script>
   </body>
 </html>
