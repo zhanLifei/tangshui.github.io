@@ -218,6 +218,25 @@
         width: 100px;
         padding: 5px;
       }
+      .custom-select {
+        vertical-align: middle;
+        height: 24px;
+        line-height: 24px;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        width: 100px;
+      }
+      .custom-input {
+        height: 24px !important;
+        line-height: 24px;
+        vertical-align: middle;
+        padding: 0 5px;
+        border: 1px solid #d9d9d9;
+        border-radius: 4px;
+        font-size: 12px !important;
+        box-sizing: border-box;
+      }
+
       /* 已登录界面 */
       .main{text-align:center;display:none;padding:20px}
       .main.show{display:block}
@@ -277,7 +296,7 @@
       <div class="title"></div>
       <div class="remark"></div>
       <p></p>
-      <img src="" alt="">
+      <img src="" alt="" style="margin-top: 10px;">
     </div>
 
     <!-- 计算器底部弹窗 -->
@@ -288,11 +307,11 @@
         <span class="close-btn" id="closeModal">&times;</span>
       </div>
       <!-- 计算 -->
-      <label>请输入换算</label>
+      <label>请选择换算类型后输入</label>
       <div id="calcListNew">
        
       </div>
-      <div style="display: flex;justify-content: space-between;margin-top: 20px;margin-top: 20px;border-top: 1px solid #ccc;padding: 10px 0 0 0;">
+      <div style="display: flex;justify-content: space-between;margin-top: 10px;border-top: 1px solid #ccc;padding: 10px 0 0 0;">
         <div>
           <label>原配方</label>
           <div class="calc-row total-row" id="calcList1"></div>
