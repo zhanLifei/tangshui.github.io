@@ -3,342 +3,850 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 微信分享卡片设置 -->
-    <meta name="wx-share-title" content="萍萍糖水铺">
-    <meta name="wx-share-desc" content="一碗糖水，治愈所有的不开心~">
-    <meta name="wx-share-img" content="https://zhanlifei.github.io/tangshui.github.io/image/4.jpg">
-
-    <!-- 兼容部分版本 Open Graph -->
-    <meta property="og:title" content="萍萍糖水铺">
-    <meta property="og:description" content="一碗糖水，治愈所有的不开心~">
-    <meta property="og:image" content="https://zhanlifei.github.io/tangshui.github.io/image/4.jpg">
-    <meta property="og:url" content="https://zhanlifei.github.io/tangshui.github.io/">
+    <meta name="wx-share-title" content="萍萍糖水铺" />
+    <meta name="wx-share-desc" content="一碗糖水，治愈所有的不开心~" />
+    <meta name="wx-share-img" content="https://zhanlifei.github.io/tangshui.github.io/image/4.jpg" />
+    <meta property="og:title" content="萍萍糖水铺" />
+    <meta property="og:description" content="一碗糖水，治愈所有的不开心~" />
+    <meta property="og:image" content="https://zhanlifei.github.io/tangshui.github.io/image/4.jpg" />
+    <meta property="og:url" content="https://zhanlifei.github.io/tangshui.github.io/" />
     <title>萍萍糖水铺</title>
-    <!-- 引入jQuery -->
-    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <style>
+      [v-cloak] {
+        display: none;
+      }
+
+      :root {
+        --brand: #f25555;
+        --brand-dark: #dd3f46;
+        --brand-soft: #fff0ee;
+        --ink: #282320;
+        --muted: #857b75;
+        --line: #f0e3dd;
+        --surface: #fffdfa;
+        --panel: #ffffff;
+        --mint: #e9f7f0;
+        --mint-text: #267a57;
+        --shadow: 0 10px 28px rgba(117, 68, 48, 0.12);
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: 'Microsoft YaHei', sans-serif;
+        font-family: 'Microsoft YaHei', Arial, sans-serif;
+      }
+
+      html {
+        background: #f0f3f2;
       }
 
       body {
-        background: #f5f5f5;
+        min-height: 100vh;
         max-width: 750px;
         margin: 0 auto;
+        background:
+          linear-gradient(180deg, #fff7f0 0, #fffdf9 190px, #f5f4ef 100%);
+        color: var(--ink);
       }
-      .hide {
-        display: none;
+
+      button,
+      input,
+      select {
+        font: inherit;
       }
-      /* 页面头部 */
+
+      button {
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+      }
+
       .shop-header {
-        background: #ff4f4f;
-        color: #fff;
-        padding: 15px;
-        text-align: center;
-        font-size: 18px;
-        font-weight: bold;
         position: sticky;
         top: 0;
         z-index: 99;
         display: flex;
-      }
-      .shop-header .title {
-        flex: 1;
+        align-items: center;
+        min-height: 58px;
+        padding: 12px 14px;
+        color: #fff;
+        text-align: center;
+        background:
+          radial-gradient(circle at 16% 0, rgba(255, 225, 154, 0.42), transparent 26%),
+          linear-gradient(135deg, #f55b5d 0%, #e9474f 54%, #c63843 100%);
+        box-shadow: 0 8px 22px rgba(199, 56, 67, 0.22);
       }
 
-      /* 主体容器：左分类 + 右商品 */
+      .header-action {
+        width: 76px;
+        min-height: 34px;
+        padding: 0 8px;
+        border-radius: 999px;
+        color: #fff;
+        font-size: 14px;
+        text-align: left;
+      }
+
+      .header-action:last-child {
+        text-align: right;
+      }
+
+      .header-action:active {
+        background: rgba(255, 255, 255, 0.16);
+      }
+
+      .shop-header .title {
+        flex: 1;
+        min-width: 0;
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1.25;
+      }
+
       .container {
         display: flex;
-        height: calc(100vh - 55px);
+        height: calc(100vh - 58px);
         overflow: hidden;
       }
 
-      /* 左侧分类栏 */
       .category {
-        width: 90px;
-        background: #fff;
+        width: 98px;
+        padding: 10px 0 16px;
         overflow-y: auto;
-        border-right: 1px solid #eee;
+        background: rgba(255, 255, 255, 0.74);
+        border-right: 1px solid rgba(240, 227, 221, 0.82);
+        scroll-behavior: smooth;
+      }
+
+      .category::-webkit-scrollbar,
+      .goods-wrap::-webkit-scrollbar,
+      .detail::-webkit-scrollbar,
+      .bottom-modal::-webkit-scrollbar {
+        width: 0;
+        height: 0;
       }
 
       .category-item {
-        padding: 15px 10px;
+        width: 100%;
+        min-height: 46px;
+        margin: 0 0 4px;
+        padding: 10px 9px;
+        border-left: 4px solid transparent;
+        color: #6f625c;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.25;
         text-align: center;
-        font-size: 14px;
-        color: #333;
-        cursor: pointer;
+        transition: color 0.18s ease, background 0.18s ease, border-color 0.18s ease;
       }
 
       .category-item.active {
-        background: #f5f5f5;
-        color: #ff4f4f;
-        font-weight: bold;
-        border-left: 3px solid #ff4f4f;
+        border-left-color: var(--brand);
+        background: #fff7f5;
+        color: var(--brand-dark);
+        font-weight: 800;
       }
 
-      /* 右侧商品列表 */
       .goods-wrap {
         flex: 1;
         overflow-y: auto;
-        padding: 10px;
+        padding: 12px 12px 20px;
+        scroll-behavior: smooth;
+      }
+
+      .goods-section {
+        scroll-margin-top: 12px;
+      }
+
+      .goods-section + .goods-section {
+        margin-top: 12px;
       }
 
       .goods-title {
-        font-size: 16px;
-        font-weight: bold;
-        margin: 10px 0;
-        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 36px;
+        padding: 8px 2px 10px;
+        color: var(--ink);
+        font-size: 17px;
+        font-weight: 800;
+        background: transparent;
+      }
+
+      .goods-title::before {
+        content: '';
+        width: 6px;
+        height: 18px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #f25555, #ffb067);
       }
 
       .goods-item {
+        position: relative;
+        width: 100%;
         display: flex;
-        background: #fff;
-        border-radius: 8px;
-        padding: 10px;
-        margin-bottom: 10px;
         align-items: center;
+        min-height: 96px;
+        margin-bottom: 10px;
+        padding: 11px 36px 11px 11px;
+        border: 1px solid rgba(240, 227, 221, 0.82);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 3px 10px rgba(88, 59, 45, 0.045);
+        text-align: left;
+        transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+      }
+
+      .goods-item::after {
+        content: '›';
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #cbb9b1;
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .goods-item:active {
+        transform: scale(0.985);
+        border-color: #ffd0c8;
+        box-shadow: 0 4px 12px rgba(88, 59, 45, 0.08);
       }
 
       .goods-img {
-        width: 70px;
-        height: 70px;
-        border-radius: 6px;
+        flex: 0 0 auto;
+        width: 76px;
+        height: 76px;
+        margin-right: 12px;
+        border-radius: 8px;
         object-fit: cover;
-        margin-right: 10px;
+        background: #f4eee9;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.44);
       }
 
       .goods-info {
         flex: 1;
+        min-width: 0;
       }
 
       .goods-name {
-        font-size: 15px;
-        color: #333;
-        margin-bottom: 5px;
+        margin-bottom: 7px;
+        color: var(--ink);
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 1.35;
       }
 
       .goods-desc {
+        display: -webkit-box;
+        overflow: hidden;
+        color: var(--muted);
         font-size: 12px;
-        color: #999;
-        margin-bottom: 6px;
+        line-height: 1.5;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
       }
 
-      .goods-price {
-        font-size: 16px;
-        color: #ff4f4f;
-        font-weight: bold;
-      }
       .detail {
-        background-color: #fff;
-        height: calc(100vh - 55px);
-        padding: 10px;
+        min-height: calc(100vh - 58px);
+        height: calc(100vh - 58px);
+        padding: 14px 12px 26px;
+        overflow-y: auto;
+        background:
+          linear-gradient(180deg, #fff7f0 0, #fffdf9 180px, #f5f4ef 100%);
       }
-      .detail .title {
-        font-weight: 600;
+
+      .detail-hero {
+        overflow: hidden;
+        border: 1px solid rgba(240, 227, 221, 0.84);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
       }
-      .detail .remark {
-        color: #999;
-      }
-      .detail p {
-        margin-top: 20px;
-      }
-      .detail img {
+
+      .detail-cover {
+        display: block;
         width: 100%;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        background: #f4eee9;
       }
-      /* 弹窗遮罩 */
+
+      .detail-hero-info {
+        padding: 16px;
+      }
+
+      .detail-kicker {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 8px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: var(--brand-soft);
+        color: var(--brand-dark);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .detail-title {
+        color: var(--ink);
+        font-size: 24px;
+        line-height: 1.28;
+        font-weight: 900;
+      }
+
+      .detail-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+
+      .detail-pill {
+        max-width: 100%;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #f5f0ec;
+        color: #766a64;
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
+      .detail-pill.accent {
+        background: var(--mint);
+        color: var(--mint-text);
+        font-weight: 700;
+      }
+
+      .detail-card {
+        margin-top: 14px;
+        padding: 17px 15px;
+        border: 1px solid rgba(240, 227, 221, 0.82);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 8px 20px rgba(88, 59, 45, 0.06);
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        color: var(--ink);
+        font-size: 17px;
+        font-weight: 900;
+      }
+
+      .section-title::before {
+        content: '';
+        width: 6px;
+        height: 18px;
+        border-radius: 999px;
+        background: linear-gradient(180deg, #f25555, #ffb067);
+      }
+
+      .materials {
+        color: #3e3732;
+        font-size: 15px;
+        line-height: 1.9;
+        word-break: break-word;
+      }
+
+      .materials strong {
+        color: var(--ink);
+      }
+
       .modal-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: none;
+        background: rgba(35, 25, 20, 0.48);
+        backdrop-filter: blur(4px);
         z-index: 999;
       }
-      /* 底部弹窗容器 */
+
       .bottom-modal {
         position: fixed;
         bottom: -100%;
-        left: 0;
-        width: 100%;
-        background: white;
+        left: 50%;
+        width: min(100%, 750px);
+        max-height: 88vh;
+        padding: 18px 16px calc(18px + env(safe-area-inset-bottom));
+        overflow-y: auto;
+        transform: translateX(-50%);
         border-radius: 20px 20px 0 0;
-        padding: 20px;
-        box-sizing: border-box;
+        background: var(--surface);
+        box-shadow: 0 -18px 38px rgba(48, 31, 25, 0.2);
         transition: bottom 0.3s ease;
         z-index: 1000;
-        max-height: 80vh;
-        overflow-y: auto;
       }
+
       .bottom-modal.show {
         bottom: 0;
       }
+
       .modal-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #eee;
+        margin-bottom: 12px;
       }
+
       .modal-title {
-        font-size: 18px;
-        font-weight: bold;
+        color: var(--ink);
+        font-size: 19px;
+        font-weight: 900;
       }
+
       .close-btn {
-        font-size: 24px;
-        cursor: pointer;
-        color: #666;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #f4eee9;
+        color: #7f716a;
+        font-size: 25px;
+        line-height: 1;
       }
-      .calc-row {
-        display: flex;
-        flex-direction: column;
-        margin: 10px 0;
-        border-bottom: 1px solid #f5f5f5;
+
+      .calc-subtitle {
+        margin-bottom: 12px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
       }
-      .total-row {
-        color: #ff4444;
+
+      .field-label {
+        display: block;
+        margin-bottom: 7px;
+        color: var(--ink);
+        font-size: 13px;
+        font-weight: 800;
       }
-      .calc-row label {
-        display: inline-block;
-        width: 100px;
-      }
+
       .scale-input {
-        margin: 5px 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(92px, 112px) auto;
+        gap: 8px;
+        align-items: center;
       }
-      .scale-input label {
-        display: inline-block;
-        width: 100px;
-      }
-      .scale-input input {
-        width: 100px;
-        padding: 5px;
-      }
-      .custom-select {
-        vertical-align: middle;
-        height: 24px;
-        line-height: 24px;
-        border: 1px solid #d9d9d9;
-        border-radius: 4px;
-        width: 100px;
-      }
+
+      .custom-select,
       .custom-input {
-        height: 24px !important;
-        line-height: 24px;
-        vertical-align: middle;
-        padding: 0 5px;
-        border: 1px solid #d9d9d9;
-        border-radius: 4px;
-        font-size: 12px !important;
-        box-sizing: border-box;
-      }
-
-      /* 已登录界面 */
-      .main{text-align:center;display:none;padding:20px}
-      .main.show{display:block}
-      .main h2{margin-bottom:12px;color:#333}
-      .main p{color:#666;margin-bottom:20px}
-      .logoutBtn{padding:10px 24px;background:#ff4d4f;color:white;border:none;border-radius:8px}
-
-      /* 遮罩 */
-      .mask{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index: 999;}
-      .mask.hide{display:none}
-
-      /* 密码框 */
-      .lock-box{width:320px;background:#fff;border-radius:16px;overflow:hidden;padding-bottom:12px;position: relative;}
-      .paswword-tisp{
-        position: absolute;
-        font-size: 12px;
-        top: 41px;
         width: 100%;
-        text-align: center;
-        color: #ff4444;
+        height: 42px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        color: var(--ink);
+        font-size: 14px;
+        outline: none;
       }
-      .lock-title{padding:20px;text-align:center;font-size:16px;color:#333}
-      .pwd-input{display:flex;justify-content:center;gap:12px;margin:0 auto 20px;padding:0 20px}
-      .dot{width:14px;height:14px;border-radius:50%;border:1px solid #ddd}
-      .dot.active{background:#333}
 
-      /* 键盘 */
-      .keyboard{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 16px}
-      .key{height:56px;display:flex;align-items:center;justify-content:center;font-size:24px;border-radius:12px;background:#f7f8fa;border:none}
-      .key:active{background:#e5e6eb}
-      .key.del{font-size:16px;color:#666}
+      .custom-select:focus,
+      .custom-input:focus {
+        border-color: #ffada3;
+        box-shadow: 0 0 0 3px rgba(242, 85, 85, 0.1);
+      }
+
+      .custom-select {
+        padding: 0 9px;
+      }
+
+      .custom-input {
+        padding: 0 10px;
+        text-align: right;
+      }
+
+      .calc-unit {
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .ratio-actions {
+        display: flex;
+        gap: 8px;
+        margin: 13px 0 11px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .ratio-btn {
+        flex: 0 0 auto;
+        min-width: 54px;
+        height: 34px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: #f4eee9;
+        color: #5d514b;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .ratio-btn.active {
+        background: linear-gradient(135deg, #f25555, #ff8b69);
+        color: #fff;
+      }
+
+      .clear-btn {
+        margin-left: auto;
+        color: #948880;
+      }
+
+      .calc-summary {
+        margin: 11px 0;
+        padding: 10px 11px;
+        border-radius: 8px;
+        background: #fff0ee;
+        color: var(--brand-dark);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .calc-table {
+        overflow: hidden;
+        margin-top: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+      }
+
+      .calc-table-head,
+      .calc-table-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(76px, 0.8fr) minmax(86px, 0.9fr);
+        gap: 8px;
+        align-items: center;
+      }
+
+      .calc-table-head {
+        padding: 10px;
+        background: #f8f2ee;
+        color: #766a64;
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .calc-table-row {
+        padding: 11px 10px;
+        border-top: 1px solid #f4ece7;
+        color: #3d352f;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .calc-table-row.selected {
+        background: #fff8f7;
+      }
+
+      .ingredient-name {
+        min-width: 0;
+        font-weight: 800;
+      }
+
+      .origin-value {
+        color: #857b75;
+      }
+
+      .scaled-value {
+        color: var(--brand-dark);
+        font-weight: 900;
+      }
+
+      .empty-tip {
+        color: #a99e98;
+        font-weight: 400;
+      }
+
+      .mask {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        background:
+          radial-gradient(circle at 28% 18%, rgba(255, 194, 116, 0.2), transparent 30%),
+          rgba(35, 25, 20, 0.56);
+        backdrop-filter: blur(5px);
+        z-index: 1001;
+      }
+
+      .lock-box {
+        position: relative;
+        width: min(320px, 100%);
+        overflow: hidden;
+        padding: 4px 0 16px;
+        border: 1px solid rgba(255, 255, 255, 0.62);
+        border-radius: 20px;
+        background: var(--surface);
+        box-shadow: 0 20px 52px rgba(38, 25, 18, 0.26);
+      }
+
+      .paswword-tisp {
+        position: absolute;
+        top: 47px;
+        width: 100%;
+        color: var(--brand-dark);
+        font-size: 12px;
+        text-align: center;
+      }
+
+      .paswword-tisp.success {
+        color: var(--mint-text);
+      }
+
+      .lock-title {
+        padding: 20px 20px 22px;
+        color: var(--ink);
+        font-size: 17px;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .pwd-input {
+        display: flex;
+        justify-content: center;
+        gap: 11px;
+        margin: 0 auto 20px;
+        padding: 0 20px;
+      }
+
+      .dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid #dbcac1;
+        background: #fff;
+      }
+
+      .dot.active {
+        border-color: var(--brand);
+        background: var(--brand);
+        box-shadow: 0 0 0 4px rgba(242, 85, 85, 0.1);
+      }
+
+      .keyboard {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0 16px;
+      }
+
+      .key {
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        background: #fff;
+        color: var(--ink);
+        box-shadow: 0 6px 16px rgba(88, 59, 45, 0.08);
+        font-size: 23px;
+        font-weight: 800;
+      }
+
+      .key:active {
+        transform: scale(0.97);
+        background: #fff0ee;
+      }
+
+      .key.del {
+        color: #80736c;
+        font-size: 15px;
+      }
+
+      @media (max-width: 360px) {
+        .category {
+          width: 88px;
+        }
+
+        .goods-wrap {
+          padding-inline: 9px;
+        }
+
+        .goods-item {
+          padding-right: 30px;
+        }
+
+        .goods-img {
+          width: 68px;
+          height: 68px;
+        }
+
+        .scale-input {
+          grid-template-columns: 1fr;
+        }
+
+        .calc-unit {
+          margin-top: -3px;
+        }
+      }
     </style>
   </head>
   <body>
-    <!-- 头部 -->
-    <div class="shop-header">
-      <span id="balck_btn" class="hide">返回</span>
-      <div class="title">糖水配方</div>
-      <span id="calculator_btn" class="hide">计算器</span>
-    </div>
+    <div id="app" v-cloak>
+      <header class="shop-header">
+        <button class="header-action" type="button" v-show="currentDetail" @click="goBack">返回</button>
+        <div class="title">{{ pageTitle }}</div>
+        <button class="header-action" type="button" v-show="canUseCalculator" @click="openCalculator">计算器</button>
+      </header>
 
-    <!-- 主体 -->
-    <div class="container">
-      <!-- 左侧分类 -->
-      <div class="category" id="category_id">
-        
-      </div>
+      <main class="container" v-if="!currentDetail">
+        <nav class="category" ref="categoryScroller">
+          <button
+            class="category-item"
+            type="button"
+            v-for="(category, index) in categoryList"
+            :key="category.title"
+            :data-category-index="index"
+            :class="{ active: activeCategoryIndex === index }"
+            @click="scrollToCategory(index)"
+          >
+            {{ category.title }}
+          </button>
+        </nav>
 
-      <!-- 右侧商品 -->
-      <div class="goods-wrap" id="goods_wrap_id">
-        
-      </div>
-    </div>
+        <section class="goods-wrap" ref="goodsScroller" @scroll="handleGoodsScroll">
+          <section
+            class="goods-section"
+            v-for="(category, cIndex) in categoryList"
+            :key="category.title"
+            :ref="(el) => setCategorySectionRef(el, cIndex)"
+          >
+            <div class="goods-title">{{ category.title }}</div>
+            <button
+              class="goods-item"
+              type="button"
+              v-for="item in category.list"
+              :key="`${category.title}-${item.id}-${item.name}`"
+              @click="openDetail(item, cIndex)"
+            >
+              <img class="goods-img" :src="item.url" :alt="item.name" />
+              <div class="goods-info">
+                <div class="goods-name">{{ item.name }}</div>
+                <div class="goods-desc">{{ item.remark || '' }}</div>
+              </div>
+            </button>
+          </section>
+        </section>
+      </main>
 
-    <!-- 详情 -->
-    <div class="detail hide">
-      <div class="title"></div>
-      <div class="remark"></div>
-      <p></p>
-      <img src="" alt="" style="margin-top: 10px;">
-    </div>
+      <main class="detail" v-else>
+        <section class="detail-hero">
+          <img class="detail-cover" :src="currentDetail.url" :alt="currentDetail.name" />
+          <div class="detail-hero-info">
+            <div class="detail-kicker">{{ activeCategory.title }}</div>
+            <h1 class="detail-title">{{ currentDetail.name }}</h1>
+            <div class="detail-meta">
+              <span class="detail-pill" v-if="currentDetail.remark">{{ currentDetail.remark }}</span>
+              <span class="detail-pill accent" v-if="canUseCalculator">支持配方换算</span>
+            </div>
+          </div>
+        </section>
 
-    <!-- 计算器底部弹窗 -->
-    <div class="modal-overlay" id="modalOverlay"></div>
-    <div class="bottom-modal" id="bottomModal">
-      <div class="modal-header">
-        <span class="modal-title">配方计算器</span>
-        <span class="close-btn" id="closeModal">&times;</span>
-      </div>
-      <!-- 计算 -->
-      <label>请选择换算类型后输入</label>
-      <div id="calcListNew">
-       
-      </div>
-      <div style="display: flex;justify-content: space-between;margin-top: 10px;border-top: 1px solid #ccc;padding: 10px 0 0 0;">
-        <div>
-          <label>原配方</label>
-          <div class="calc-row total-row" id="calcList1"></div>
+        <section class="detail-card">
+          <div class="section-title">配方做法</div>
+          <div class="materials" v-html="currentDetail.materials"></div>
+        </section>
+      </main>
+
+      <div class="modal-overlay" v-show="isCalculatorOpen" @click="closeCalculator"></div>
+      <section class="bottom-modal" :class="{ show: isCalculatorOpen }">
+        <div class="modal-header">
+          <span class="modal-title">配方计算器</span>
+          <button class="close-btn" type="button" @click="closeCalculator">&times;</button>
         </div>
-        <div>
-          <label>换算后配方</label>
-          <div class="calc-row total-row" id="calcList2"></div>
+
+        <template v-if="canUseCalculator">
+          <div class="calc-subtitle">{{ currentDetail.name }}</div>
+          <label class="field-label">按这个材料换算</label>
+          <div class="scale-input">
+            <select class="custom-select" v-model.number="calculatorBaseIndex">
+              <option v-for="(item, index) in currentDetail.detailList" :key="`${item.name}-${index}`" :value="index">
+                {{ item.name }}
+              </option>
+            </select>
+            <input
+              class="custom-input"
+              type="text"
+              maxlength="5"
+              inputmode="numeric"
+              placeholder="数量"
+              v-model="calculatorInput"
+              @input="normalizeCalculatorInput"
+            />
+            <span class="calc-unit">{{ selectedBaseUnit }}</span>
+          </div>
+
+          <div class="ratio-actions">
+            <button
+              class="ratio-btn"
+              type="button"
+              v-for="ratio in calculatorRatios"
+              :key="ratio.value"
+              :class="{ active: calculatorRate === ratio.value }"
+              @click="setCalculatorRatio(ratio.value)"
+            >
+              {{ ratio.label }}
+            </button>
+            <button class="ratio-btn clear-btn" type="button" @click="clearCalculator">清空</button>
+          </div>
+
+          <div class="calc-summary" v-if="hasCalculatorInput">
+            当前按 {{ selectedBaseItem.name }} {{ calculatorInput }} {{ selectedBaseUnit }} 换算，倍率 {{ formattedCalculatorRate }}x
+          </div>
+
+          <div class="calc-table">
+            <div class="calc-table-head">
+              <span>材料</span>
+              <span>原配方</span>
+              <span>换算后</span>
+            </div>
+            <div
+              class="calc-table-row"
+              v-for="(item, index) in currentDetail.detailList"
+              :key="`calc-${index}-${item.name}`"
+              :class="{ selected: calculatorBaseIndex === index }"
+            >
+              <span class="ingredient-name">{{ item.name }}</span>
+              <span class="origin-value">{{ item.gram }} {{ item.unit || '克' }}</span>
+              <span class="scaled-value" v-if="hasCalculatorInput">{{ scaledDetailList[index].scaledGram }} {{ item.unit || '克' }}</span>
+              <span class="empty-tip" v-else>待输入</span>
+            </div>
+          </div>
+        </template>
+      </section>
+
+      <div class="mask" v-show="!isUnlocked">
+        <div class="lock-box">
+          <div class="lock-title">请输入密码</div>
+          <div class="paswword-tisp" :class="{ success: passwordTipSuccess }" v-show="passwordTip">{{ passwordTip }}</div>
+          <div class="pwd-input">
+            <div class="dot" v-for="index in passwordLength" :key="index" :class="{ active: passwordInput.length >= index }"></div>
+          </div>
+          <div class="keyboard">
+            <template v-for="key in keyboardKeys" :key="`key-${key}`">
+              <div v-if="key === ''"></div>
+              <button v-else class="key" :class="{ del: key === 'del' }" type="button" @click="pressPasswordKey(key)">
+                {{ key === 'del' ? '删除' : key }}
+              </button>
+            </template>
+          </div>
         </div>
       </div>
-      
     </div>
-    <div class="mask hide" id="mask">
-      <div class="lock-box">
-        <div class="lock-title">请输入密码</div>
-        <div class="paswword-tisp hide"></div>
-        <div class="pwd-input">
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-        </div>
-        <div class="keyboard" id="keyboard"></div>
-      </div>
-    </div>
+
     <script src="./js/index.js"></script>
-    <script src="./js/paswword.js"></script>
   </body>
 </html>

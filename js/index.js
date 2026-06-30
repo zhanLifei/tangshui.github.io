@@ -96,8 +96,12 @@ let categoryList = [
                     4寸青花瓷碗，姜汁15-20克打到碗底大圈。水牛奶200~250克，加入砂糖15-20克, 加热80度凉到(夏天72度，冬天75度)。(鲜奶200克+淡奶油8克+进口奶粉8克)此混合物可替代水牛奶。15-20克白糖(可调节)。
                     快速撞下去，奶脂后5秒凝固，奶不好盖上盖子1分钟。注:用云南小黄姜，带皮洗净，要用才现磨，姜汁过滤，不过滤则有姜渣，口感差别。撞奶要均匀，否则会散成类似蛋花的观感(底层)<br>
                     注:水牛奶版，厚重，嫩，口感更有奶制品吃完的感受;鲜奶版更嫩，滑，整体有奶油的味道，香。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '姜汁', gram: '20', unit: '克' },
+          { name: '水牛奶', gram: '250', unit: '克' },
+          { name: '白糖', gram: '20', unit: '克' },
+        ],
       },
       {
         id: 7,
@@ -137,8 +141,11 @@ let categoryList = [
                     烤箱设置：下层 145℃，上层 130℃，盖上锡纸
                     烘烤 40-50 分钟（根据自家烤箱调整时间）
                     烤好后放凉，冷藏定型即可食用`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '焦糖布丁', gram: '1', unit: '份' },
+          { name: '开水', gram: '22', unit: '克' },
+        ],
       },
       {
         id: 9,
@@ -218,8 +225,14 @@ let categoryList = [
                     开1档搅拌10秒，拿出来用手多次揉均匀(多次揉的面团会更Q弹)。注意:粉的比例有个取值，自己随意调配，因红薯，紫薯，香芋的品质不一样，
                     含水量不一样，大家灵活运用!紫薯(460-480克木薯粉，地瓜480-500克木薯粉，香芋500-550克木薯粉，仅供参考，具体还要根据不同食材的吸水性去调配)，
                     做好的芋圆冷冻能保存一个月。出餐的芋圆最好能保持1个小时内用完，少量多次煮，保证口感比较好吃。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '沙地蜜薯', gram: '1000', unit: '克' },
+          { name: '木薯粉', gram: '450', unit: '克' },
+          { name: '太白粉', gram: '80', unit: '克' },
+          { name: '糖', gram: '100', unit: '克' },
+          { name: '椰子油', gram: '20', unit: '克' },
+        ],
       },
       {
         id: 2,
@@ -308,8 +321,10 @@ let categoryList = [
         url: './image/img19.jpeg',
         remark: '电饭锅保温保存',
         materials: `<strong>制作方法：</strong>水开后倒入芋圆，轻微搅拌一下，防止沾底，煮三分钟，过冷水后放入装好冰块加一点水搅拌口感Q弹，冰水倒掉，加入少许果糖浆拌均匀。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '芋圆', gram: '1', unit: '份' },
+        ],
       },
       {
         id: 8,
@@ -547,8 +562,13 @@ let categoryList = [
         remark: '',
         materials: `<strong>材料：</strong>器皿380毫升，西米3勺，榴莲奶挤2勺，芒果1勺，榴莲球1勺(勺子容量50克1勺)少许椰乳<br>
                     基础底学会就会可以任意搭配不同的产品制作。例如，榴莲捞河，榴莲甘露，榴莲椰子冻，榴莲紫米露芒果黑糯米榴莲捞，榴莲沙冰等。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '西米', gram: '150', unit: '克' },
+          { name: '榴莲奶', gram: '100', unit: '克' },
+          { name: '芒果', gram: '50', unit: '克' },
+          { name: '榴莲球', gram: '50', unit: '克' },
+        ],
       },
       {
         id: 2,
@@ -559,8 +579,14 @@ let categoryList = [
                     (一定选熟透的芒果榨汁)加入2勺西米，2勺芒果肉，少许金柚点缀<br>
                     杨枝甘露在原有的基础上加入河粉皮和小丸子即可。<br>
                     出餐标准:器皿350-400毫升，西米3勺，芒果酱和河粉皮8条，柚子点缀，淋上2圈椰浆`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '芒果肉', gram: '250', unit: '克' },
+          { name: '冰块', gram: '80', unit: '克' },
+          { name: '椰子水', gram: '125', unit: '克' },
+          { name: '椰乳', gram: '50', unit: '克' },
+          { name: '糖', gram: '15', unit: '克' },
+        ],
       },
       {
         id: 3,
@@ -571,8 +597,15 @@ let categoryList = [
                     <strong>制作方法：</strong>玫瑰花去掉底部的根部，放入煲汤袋子，所有食材加入高压锅压制15分钟。<br>
                     出餐标准:器皿350-400毫升<br>
                     桃胶2勺，银耳汤3勺，上面点缀少许大马士革玫瑰花瓣。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '大马士革玫瑰花', gram: '2', unit: '朵' },
+          { name: '平阴玫瑰', gram: '1', unit: '朵' },
+          { name: '银耳', gram: '200', unit: '克' },
+          { name: '水', gram: '1200', unit: '克' },
+          { name: '石蜂糖', gram: '30', unit: '克' },
+          { name: '冰糖', gram: '50', unit: '克' },
+        ],
       },
       {
         id: 4,
@@ -589,8 +622,13 @@ let categoryList = [
                     注:炒奶糊全蛋奶可出9分熟，外卖出八分熟，有添加的则可直接出八分熟的。餐具要提前备好，快速出餐<br>
                     市场比较受欢迎的奶糊种类可以参考一下:<br>
                     1.开心果蛋奶;2.拉丝米麻薯酒酿蛋奶糊;3.椰汁蛋奶;4.麦片蛋奶;5.咖啡蛋奶;6.香芋蛋奶;7.杏仁蛋奶;8.芝麻蛋奶;9.抹茶蛋奶;10.可可蛋奶`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '鲜奶', gram: '220', unit: '克' },
+          { name: '蛋液', gram: '80', unit: '克' },
+          { name: '酒酿', gram: '1', unit: '茶勺' },
+          { name: '麻薯', gram: '1', unit: '勺' },
+        ],
       },
       
       {
@@ -599,8 +637,15 @@ let categoryList = [
         url: './image/img0.jpg',
         remark: '',
         materials: `<strong>出餐标准: </strong>碗500毫升，芋圆12粒，莲子12粒，桃胶1勺，草冻10块，红豆一勺，鲜奶100毫升。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '芋圆', gram: '12', unit: '粒' },
+          { name: '莲子', gram: '12', unit: '粒' },
+          { name: '桃胶', gram: '1', unit: '勺' },
+          { name: '草冻', gram: '10', unit: '块' },
+          { name: '红豆', gram: '1', unit: '勺' },
+          { name: '鲜奶', gram: '100', unit: '毫升' },
+        ],
       },
       {
         id: 6,
@@ -614,8 +659,14 @@ let categoryList = [
                     C：锅中加入1000克水加入糖烧开, 加入A部分马蹄碎和B部份龙眼大火烧开转小火煮2分钟，慢慢倒入C部分即可。<br>
                     <strong>出餐标准: </strong>器皿350-400毫升。龙眼去核放入冰块冰镇出餐备用，6个龙眼加椰乳点缀出餐。<br>
                     <strong>注：</strong>龙眼打碎再加水,马蹄粉最后放`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '马蹄', gram: '280', unit: '克' },
+          { name: '龙眼', gram: '100', unit: '克' },
+          { name: '水', gram: '1500', unit: '克' },
+          { name: '冰糖', gram: '60', unit: '克' },
+          { name: '马蹄粉', gram: '37', unit: '克' },
+        ],
       },
       {
         id: 7,
@@ -623,8 +674,12 @@ let categoryList = [
         url: './image/img29.png',
         remark: '',
         materials: `榴莲奶5分满，加入一勺米麻薯，一勺莲子，西米龙珠一勺，撒上一点椰子碎。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '米麻薯', gram: '1', unit: '勺' },
+          { name: '莲子', gram: '1', unit: '勺' },
+          { name: '西米龙珠', gram: '1', unit: '勺' },
+        ],
       },
       {
         id: 8,
@@ -632,8 +687,14 @@ let categoryList = [
         url: './image/img0.jpg',
         remark: '',
         materials: `器皿容量:500毫升，桂花冻2勺，一勺红豆，莲子8粒，芋圆10粒，倒入椰奶100毫升，椰子片点缀。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '桂花冻', gram: '2', unit: '勺' },
+          { name: '红豆', gram: '1', unit: '勺' },
+          { name: '莲子', gram: '8', unit: '粒' },
+          { name: '芋圆', gram: '10', unit: '粒' },
+          { name: '椰奶', gram: '100', unit: '毫升' },
+        ],
       },
     ],
   },
@@ -742,8 +803,10 @@ let categoryList = [
         url: './image/img0.jpg',
         remark: '',
         materials: `<strong>材料：</strong>姜薯, 先把水烧开，用刨皮刀刨成片状加入开水中煮到卷起来即可。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '姜薯', gram: '1', unit: '份' },
+        ],
       },
       {
         id: 9,
@@ -772,8 +835,15 @@ let categoryList = [
         materials: `<strong>材料：</strong>桂平腐竹皮4片，水2500克，牛奶150克，燕麦奶200克，无糖豆浆粉120克，黄冰糖120克
                     <br><strong>制作方法：</strong>腐竹皮:清水泡10分钟，再过2次水备用，锅里倒入水烧开后加入豆浆粉，放入发泡好的腐竹皮，用勺子搅拌到开，容易糊底，小火熬30分钟后加入糖，牛奶，燕麦奶即可。
                     出餐标准:器皿350-400毫升，薏米1勺，窝蛋一个，白果12粒，汤汁3勺，腐皮少许。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '桂平腐竹皮', gram: '4', unit: '片' },
+          { name: '水', gram: '2500', unit: '克' },
+          { name: '牛奶', gram: '150', unit: '克' },
+          { name: '燕麦奶', gram: '200', unit: '克' },
+          { name: '无糖豆浆粉', gram: '120', unit: '克' },
+          { name: '黄冰糖', gram: '120', unit: '克' },
+        ],
       },
       {
         id: 2,
@@ -782,8 +852,14 @@ let categoryList = [
         remark: '0-5度冰箱保存2天',
         materials: `<strong>材料：</strong>新鲜银耳200克，马蹄3个，水2000克，石蜂糖60克，黄冰糖80克。
                     <br><strong>制作方法：</strong>新鲜雪耳泡洗干净，剪掉底部，剪碎沥干水份，压力锅倒入所有材料压制15分钟，自动排气开盖后加入1000克热水搅拌均匀。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '新鲜银耳', gram: '200', unit: '克' },
+          { name: '马蹄', gram: '3', unit: '个' },
+          { name: '水', gram: '3000', unit: '克' },
+          { name: '石蜂糖', gram: '60', unit: '克' },
+          { name: '黄冰糖', gram: '80', unit: '克' },
+        ],
       },
       {
         id: 3,
@@ -791,8 +867,15 @@ let categoryList = [
         url: './image/img0.jpg',
         remark: '0-5度冰箱保存4天',
         materials: `水800克，白糖100克，金沙糖100克，黄冰糖100克，全部材料煮沸腾即可加入菠萝50克和蜂蜜50克。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '水', gram: '800', unit: '克' },
+          { name: '白糖', gram: '100', unit: '克' },
+          { name: '金沙糖', gram: '100', unit: '克' },
+          { name: '黄冰糖', gram: '100', unit: '克' },
+          { name: '菠萝', gram: '50', unit: '克' },
+          { name: '蜂蜜', gram: '50', unit: '克' },
+        ],
       },
       {
         id: 4,
@@ -800,8 +883,15 @@ let categoryList = [
         url: './image/img0.jpg',
         remark: '0-5度冰箱保存4天',
         materials: `冬瓜500克切小粒，黄冰糖15克，冬瓜糖120克压碎，红糖粉15克，全部加一起搅拌腌制3个小时，加入700毫升清水煮到冬瓜软烂。过滤出来加入1000克冰块即可。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '冬瓜', gram: '500', unit: '克' },
+          { name: '黄冰糖', gram: '15', unit: '克' },
+          { name: '冬瓜糖', gram: '120', unit: '克' },
+          { name: '红糖粉', gram: '15', unit: '克' },
+          { name: '清水', gram: '700', unit: '毫升' },
+          { name: '冰块', gram: '1000', unit: '克' },
+        ],
       },
       {
         id: 5,
@@ -812,8 +902,15 @@ let categoryList = [
                     梨去皮挖梨芯去核，头尾削平(卖相好看)清洗干净<br>
                     <strong>比例:</strong><br>梨5个，水2500克，烧开后加入冰糖80克，红糖粉1勺，大火烧转小火1个小时，加入碎鲜雪耳(约1朵)和秋梨膏15克，再煮20~30分钟，具体时间雪耳煮至出胶，
                     关火后加入红枣片和枸杞盖上盖子焖20分钟即可。如果需要做到烤制部分可以用500毫升的陶瓷器皿装入梨子放入烤箱烤20分钟，出来颜色加深效果好。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '梨', gram: '5', unit: '个' },
+          { name: '水', gram: '2500', unit: '克' },
+          { name: '冰糖', gram: '80', unit: '克' },
+          { name: '红糖粉', gram: '1', unit: '勺' },
+          { name: '鲜雪耳', gram: '1', unit: '朵' },
+          { name: '秋梨膏', gram: '15', unit: '克' },
+        ],
       },
     ],
   },
@@ -827,8 +924,17 @@ let categoryList = [
         remark: '',
         materials: `<strong>材料：</strong>牛奶400克，粉30克，冰勃朗60克，生椰乳100克，炼乳60克，淡奶油60克，水150克，果糖30克
                     <br>抹茶冰底:在原基础的冰底550克上加入10克抹茶粉。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '牛奶', gram: '400', unit: '克' },
+          { name: '粉', gram: '30', unit: '克' },
+          { name: '冰勃朗', gram: '60', unit: '克' },
+          { name: '生椰乳', gram: '100', unit: '克' },
+          { name: '炼乳', gram: '60', unit: '克' },
+          { name: '淡奶油', gram: '60', unit: '克' },
+          { name: '水', gram: '150', unit: '克' },
+          { name: '果糖', gram: '30', unit: '克' },
+        ],
       },
       {
         id: 2,
@@ -870,8 +976,10 @@ let categoryList = [
                     <br>2. 海盐芝士水果冰
                     <br>3. 海盐抹茶雪球冰
                     <br>4. 海盐芒果冰`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '杏仁片', gram: '1', unit: '份' },
+        ],
       },
     ],
   },
@@ -920,8 +1028,13 @@ let categoryList = [
         remark: '',
         materials: `<strong>材料：</strong>30g芭乐糖浆，5g黄柠檬汁(莫林)，芭乐果肉两片，气泡水200ml
                     <br><strong>制作方法：</strong>雪克壶加冰，加芭乐糖浆，柠檬汁，一片芭乐切成果肉，倒入一点气泡水搅和均匀后倒入出品杯，芭乐片装饰即可`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '芭乐糖浆', gram: '30', unit: '克' },
+          { name: '黄柠檬汁', gram: '5', unit: '克' },
+          { name: '芭乐果肉', gram: '2', unit: '片' },
+          { name: '气泡水', gram: '200', unit: '毫升' },
+        ],
       },
       {
         id: 2,
@@ -930,8 +1043,14 @@ let categoryList = [
         remark: '',
         materials: `<strong>材料：</strong>葡萄，葡萄汁(nfc)，柠檬糖(莫林)蔗糖，香水柠檬，气泡水
                     <br><strong>制作方法：</strong>雪克壶加入三颗葡萄加冰捶打，加入30ml葡萄汁，5g柠檬糖，10g蔗糖，搅拌均匀后倒入出品杯，气泡水补满，两片柠檬片装饰`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '葡萄', gram: '3', unit: '颗' },
+          { name: '葡萄汁', gram: '30', unit: '毫升' },
+          { name: '柠檬糖', gram: '5', unit: '克' },
+          { name: '蔗糖', gram: '10', unit: '克' },
+          { name: '柠檬片', gram: '2', unit: '片' },
+        ],
       },
       {
         id: 3,
@@ -940,8 +1059,13 @@ let categoryList = [
         remark: '500毫升',
         materials: `<strong>材料：</strong>香水柠檬60g,红茶/茉莉绿茶/鸭屎香200g，果糖25g，柠檬汁(nfc)10g
                     <br><strong>制作方法：</strong>雪克壶中加入香水柠檬，少量冰块捶打出汁，倒入茶汤，果糖，冰到500ml,shake至气泡即可`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '香水柠檬', gram: '60', unit: '克' },
+          { name: '茶汤', gram: '200', unit: '克' },
+          { name: '果糖', gram: '25', unit: '克' },
+          { name: '柠檬汁', gram: '10', unit: '克' },
+        ],
       },
       {
         id: 4,
@@ -950,8 +1074,15 @@ let categoryList = [
         remark: '500毫升',
         materials: `<strong>材料：</strong>新鲜橙子2片，橙子糖浆20g,香水柠檬2片，柠檬糖浆5g(莫林),茉莉绿茶200g，糖25g
                     <br><strong>制作方法：</strong>雪克壶中加入香水柠檬，香橙少量冰块捶打，倒入茶汤，果糖，冰补满500mlshake即可`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '新鲜橙子', gram: '2', unit: '片' },
+          { name: '橙子糖浆', gram: '20', unit: '克' },
+          { name: '香水柠檬', gram: '2', unit: '片' },
+          { name: '柠檬糖浆', gram: '5', unit: '克' },
+          { name: '茉莉绿茶', gram: '200', unit: '克' },
+          { name: '糖', gram: '25', unit: '克' },
+        ],
       },
       {
         id: 5,
@@ -960,8 +1091,14 @@ let categoryList = [
         remark: '',
         materials: `<strong>材料：</strong>黄皮果肉5颗(热水解冻)，黄皮糖浆20g，香水柠檬2片，茉莉绿茶200g，果糖25g
                     <br><strong>制作方法：</strong>雪克壶中加入黄皮，柠檬，少量冰块，捶打出汁;倒入茶汤糖浆，果糖，冰到500摇匀`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '黄皮果肉', gram: '5', unit: '颗' },
+          { name: '黄皮糖浆', gram: '20', unit: '克' },
+          { name: '香水柠檬', gram: '2', unit: '片' },
+          { name: '茉莉绿茶', gram: '200', unit: '克' },
+          { name: '果糖', gram: '25', unit: '克' },
+        ],
       },
       {
         id: 6,
@@ -970,8 +1107,15 @@ let categoryList = [
         remark: '',
         materials: `<strong>材料：</strong>香水柠檬2片，芭乐汁30ml,绿茶200ml，蔗糖5g，柠檬糖5g(莫林)，芭乐果肉2片
                     <br><strong>制作方法：</strong>柠檬两片，雪克杯加适量冰锤加芭乐汁绿茶糖冰摇晃均匀出`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '香水柠檬', gram: '2', unit: '片' },
+          { name: '芭乐汁', gram: '30', unit: '毫升' },
+          { name: '绿茶', gram: '200', unit: '毫升' },
+          { name: '蔗糖', gram: '5', unit: '克' },
+          { name: '柠檬糖', gram: '5', unit: '克' },
+          { name: '芭乐果肉', gram: '2', unit: '片' },
+        ],
       },
     ],
   },
@@ -987,8 +1131,23 @@ let categoryList = [
                     140克，鲜露20克，老抽70克，酱油140克，剁椒酱50克，柠檬1.5个，蒜头3整个，小米辣50克
                     <br><strong>制作方法：</strong>凤爪冷水下锅放入少许桂皮八角香叶，少许盐大火烧开煮10分钟，迅速过冷水，再放入冷水泡
                     半个小时，沥干水份加入以上的材料搅拌均匀。泡10个小时以上`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '凤爪', gram: '5', unit: '斤' },
+          { name: '双鱼米醋', gram: '1000', unit: '克' },
+          { name: '白醋', gram: '100', unit: '克' },
+          { name: '冰糖碎', gram: '250', unit: '克' },
+          { name: '白糖', gram: '75', unit: '克' },
+          { name: '鸡精', gram: '100', unit: '克' },
+          { name: '蚝油', gram: '140', unit: '克' },
+          { name: '鲜露', gram: '20', unit: '克' },
+          { name: '老抽', gram: '70', unit: '克' },
+          { name: '酱油', gram: '140', unit: '克' },
+          { name: '剁椒酱', gram: '50', unit: '克' },
+          { name: '柠檬', gram: '1.5', unit: '个' },
+          { name: '蒜头', gram: '3', unit: '个' },
+          { name: '小米辣', gram: '50', unit: '克' },
+        ],
       },
       {
         id: 2,
@@ -997,8 +1156,17 @@ let categoryList = [
         remark: '',
         materials: `<strong>材料：</strong>鱼蛋250克，咖喱胆50克，水500克，椰浆30克。一勺诸侯将，一勺沙茶酱
                     <br><strong>制作方法：</strong>先把洋葱30克和蒜末15克加入少许油炒香后，把所有材料加一起煮沸。`,
-        isCalculator: false,
-        detailList: [],
+        isCalculator: true,
+        detailList: [
+          { name: '鱼蛋', gram: '250', unit: '克' },
+          { name: '咖喱胆', gram: '50', unit: '克' },
+          { name: '水', gram: '500', unit: '克' },
+          { name: '椰浆', gram: '30', unit: '克' },
+          { name: '诸侯酱', gram: '1', unit: '勺' },
+          { name: '沙茶酱', gram: '1', unit: '勺' },
+          { name: '洋葱', gram: '30', unit: '克' },
+          { name: '蒜末', gram: '15', unit: '克' },
+        ],
       },
       {
         id: 3,
@@ -1012,172 +1180,306 @@ let categoryList = [
                     <br>2。处理话梅:将咸梅或话梅用热水泡发，然后捞出，把梅肉切碎，梅核扔掉。泡梅的水也别浪费，留着备用。<br>3。加料熬煮:在煮好的甘草水中加入切碎的话梅肉，泡梅水和白砂糖搅拌至糖完全融化。
                     <br>4。勾芡:将玉米淀粉与少量凉白开(约30克)混合成淀粉水。转小火，将淀粉水缓缓倒入锅中，边倒边搅拌，防止结块，直到汤汁变得微微粘稠，透明即可关火。
                     选用新鲜的的水果洗干净切块加入甘草汁，撒上粉料即可。`,
-                            isCalculator: false,
-        detailList: [],
+                            isCalculator: true,
+        detailList: [
+          { name: '甘草片', gram: '15', unit: '克' },
+          { name: '话梅', gram: '8', unit: '颗' },
+          { name: '白砂糖/冰糖', gram: '150', unit: '克' },
+          { name: '清水', gram: '700', unit: '毫升' },
+          { name: '玉米淀粉', gram: '10', unit: '克' },
+          { name: '凉白开', gram: '30', unit: '克' },
+        ],
       }
     ],
   },
 ]
 //当前数据
-let currentlyDatail = {}
-let demoGeneral_grid = {
-  // 初始化事件
-  bindEvent: function () {
-    // 1. 分类切换
-    $('#category_id').on('click', '.category-item', function () {
-      $(this).addClass('active').siblings().removeClass('active')
-      $('.goods-list').hide()
-      // 对应分类显示
-      demoGeneral_grid.initRightFn()
-    })
 
-    // 返回
-    $('#balck_btn').on('click', function () {
-      $(this).hide()
-      $('#calculator_btn').hide()
-      $('.container').show()
-      $('.detail').hide()
-      $('.title').text('糖水配方')
-      $('#calcList2').html("")
-      currentlyDatail = {} //清空当前数据
-    })
-    // 计算器
-    $('#calculator_btn').on('click', function (e) {
-      e.preventDefault()
-      $('#modalOverlay').show()
-      $('#bottomModal').addClass('show')
-      demoGeneral_grid.calculatorFn(currentlyDatail)
-    })
+const { createApp } = Vue
 
-    // 关闭弹窗
-    function closeModal() {
-      $('#bottomModal').removeClass('show')
-      setTimeout(() => {
-        $('#modalOverlay').hide()
-      }, 300) // 等待动画结束
-    }
-    $('#closeModal,#modalOverlay').on('click', closeModal)
-  },
-  init: function () {
-    // 初始化左侧数据
-    demoGeneral_grid.initLeftFn()
-    // 初始化右侧数据
-    demoGeneral_grid.initRightFn()
-  },
-  // 初始化左侧数据
-  initLeftFn: function () {
-    $('#category_id').empty()
-    let html = ''
-    $.each(categoryList, function (index, item) {
-      if (index == 0) {
-        html += `<div class="category-item active" data-target="${item.target}" data-index="${index}">${item.title}</div>`
-      } else {
-        html += `<div class="category-item" data-target="${item.target}" data-index="${index}">${item.title}</div>`
-      }
-    })
-    $('#category_id').html(html)
-  },
-  // 初始化右侧数据
-  initRightFn: function () {
-    let index = $('#category_id')
-      .find('.category-item.active')
-      .attr('data-index')
-    $('#goods_wrap_id').empty()
-    let html = ''
-    html += `<div class="goods-list"><div class="goods-title">${categoryList[index].title}</div>`
-    $.each(categoryList[index].list, function (index, item) {
-      html += `<div class="goods-item" onclick="demoGeneral_grid.detailClick(this, ${demoGeneral_grid.escapeData(JSON.stringify(item))})">
-                        <img src="${item.url}" class="goods-img" />
-                        <div class="goods-info">
-                          <div class="goods-name">${item.name}</div>
-                          <div class="goods-desc">${item.remark ?? ''}</div>
-                        </div>
-                      </div>`
-    })
-    html += `</div>`
-    $('#goods_wrap_id').html(html)
-  },
-  // 点击糖水详情
-  detailClick: function (that, obj) {
-    currentlyDatail = obj
-    $('.container').hide()
-    $('.detail').show()
-    let names = $(that).find('.goods-name').text()
-    $('.title').text(names)
-    $('#balck_btn').show()
-    if (obj.isCalculator) {
-      $('#calculator_btn').show()
-    }
-    $('.detail').find('.title').text(obj.name)
-    $('.detail')
-      .find('.remark')
-      .text(`${obj.remark ?? ''}`)
-    $('.detail').find('p').html(obj.materials)
-    $('.detail').find('img').attr('src', obj.url)
-  },
-  // 计算器
-  calculatorFn: function (data) {
-    if (data.detailList.length == 0) {
-      $('#calcListNew').empty()
-      $('#calcList1').empty()
-      return false
-    }
-    let html1 = `<div class="scale-input">`
-    html1 += `<label>`
-    html1 += `<select id="changeSelect" class="custom-select">`
-    data.detailList.map((item, index)=>{
-      html1 += `<option value="${index}">${item.name}</option>`
-    })
-    html1 += `</select>
-            </label>
-            <input type="text" maxlength="4" onkeyup="this.value=this.value.replace(/\D/g, '')" class="custom-input" oninput="demoGeneral_grid.onInput(this, ${demoGeneral_grid.escapeData(JSON.stringify(data))})" value="" min="1" />
-            克
-          </div>`
-    $('#calcListNew').html(html1)
-
-    let html2 = ''
-    $('#calcList1').empty()
-    $.each(data.detailList, function (index, item) {
-      html2 += `<div>
-                      <label>${item.name}：</label>
-                      <span >${item.gram} 克</span>
-                    </div>`
-    })
-    $('#calcList1').html(html2)
-  },
-  // 计算
-  onInput: function (that, data) {
-    let value = $(that).val()
-    let index = $("#changeSelect").val()
-    let itemVal = data.detailList[index].gram
-    let rate = value / itemVal
-    let html3 = ''
-    $('#calcList2').empty()
-    $.each(data.detailList, function (index, item) {
-      html3 += `<div>
-                      <label>${item.name}：</label>
-                      <span >${Math.ceil(item.gram * rate)} 克</span>
-                    </div>`
-    })
-    $('#calcList2').html(html3)
-  },
-  /**
-   * 转义特殊字符的工具方法
-   * @param str 数据
-   */
-  escapeData: function (str) {
-    if (!str) return ''
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;')
-  },
+const PASSWORD_CONFIG = {
+  value: '178182',
+  expireHour: 2,
+  length: 6,
 }
-$(function () {
-  //绑定事件
-  demoGeneral_grid.bindEvent()
-  // 初始化方法
-  demoGeneral_grid.init()
-})
+
+createApp({
+  data() {
+    return {
+      categoryList,
+      activeCategoryIndex: 0,
+      categorySectionRefs: [],
+      isClickScrolling: false,
+      scrollTimer: null,
+      homeScrollTop: 0,
+      homeCategoryScrollTop: 0,
+      currentDetail: null,
+      isCalculatorOpen: false,
+      calculatorBaseIndex: 0,
+      calculatorInput: '',
+      calculatorRatios: [
+        { label: '半份', value: 0.5 },
+        { label: '原份', value: 1 },
+        { label: '2倍', value: 2 },
+        { label: '3倍', value: 3 },
+      ],
+      isUnlocked: false,
+      passwordInput: '',
+      passwordTip: '',
+      passwordTipSuccess: false,
+      passwordLength: PASSWORD_CONFIG.length,
+      keyboardKeys: [1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, 'del'],
+      passwordMessages: [
+        '你再好好想想~',
+        '你记性太差啦',
+        '啊?! 这都能忘记?',
+        '你不会是偷手机的人吧?',
+        '密码错啦~',
+        'I have no words~',
+        '你肯定不是手机本人?!',
+      ],
+    }
+  },
+
+  computed: {
+    activeCategory() {
+      return this.categoryList[this.activeCategoryIndex] || { title: '', list: [] }
+    },
+
+    pageTitle() {
+      return this.currentDetail ? this.currentDetail.name : '糖水配方'
+    },
+
+    canUseCalculator() {
+      return Boolean(
+        this.currentDetail &&
+          this.currentDetail.isCalculator &&
+          Array.isArray(this.currentDetail.detailList) &&
+          this.currentDetail.detailList.length
+      )
+    },
+
+    selectedBaseItem() {
+      return this.currentDetail?.detailList?.[this.calculatorBaseIndex] || {}
+    },
+
+    selectedBaseUnit() {
+      return this.selectedBaseItem.unit || '克'
+    },
+
+    hasCalculatorInput() {
+      return Boolean(this.canUseCalculator && Number(this.calculatorInput) > 0 && Number(this.selectedBaseItem.gram) > 0)
+    },
+
+    calculatorRate() {
+      if (!this.hasCalculatorInput) return 0
+      return Number(this.calculatorInput) / Number(this.selectedBaseItem.gram)
+    },
+
+    formattedCalculatorRate() {
+      if (!this.calculatorRate) return '0'
+      return Number(this.calculatorRate.toFixed(2)).toString()
+    },
+
+    scaledDetailList() {
+      if (!this.hasCalculatorInput) return []
+
+      return this.currentDetail.detailList.map((item) => {
+        const gram = Number(item.gram)
+        return {
+          ...item,
+          scaledGram: Number.isFinite(gram) ? Math.ceil(gram * this.calculatorRate) : item.gram,
+        }
+      })
+    },
+  },
+
+  created() {
+    this.isUnlocked = this.isLoginValid()
+  },
+
+  methods: {
+    setCategorySectionRef(el, index) {
+      this.categorySectionRefs[index] = el
+    },
+
+    scrollToCategory(index) {
+      const section = this.categorySectionRefs[index]
+      this.activeCategoryIndex = index
+      this.isClickScrolling = true
+      window.clearTimeout(this.scrollTimer)
+      this.scrollActiveCategoryIntoView()
+
+      this.$nextTick(() => {
+        const target = this.categorySectionRefs[index] || section
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+
+        this.scrollTimer = window.setTimeout(() => {
+          this.isClickScrolling = false
+          this.syncCategoryFromScroll()
+        }, 520)
+      })
+    },
+
+    handleGoodsScroll() {
+      if (this.isClickScrolling) return
+      this.syncCategoryFromScroll()
+    },
+
+    syncCategoryFromScroll() {
+      const scroller = this.$refs.goodsScroller
+      if (!scroller) return
+
+      const scrollerTop =
+        typeof scroller.getBoundingClientRect === 'function' ? scroller.getBoundingClientRect().top : 0
+      const threshold = scrollerTop + 24
+      let nextIndex = 0
+
+      this.categorySectionRefs.forEach((section, index) => {
+        if (!section) return
+        const sectionTop =
+          typeof section.getBoundingClientRect === 'function'
+            ? section.getBoundingClientRect().top
+            : section.offsetTop - scroller.scrollTop
+        if (sectionTop <= threshold) {
+          nextIndex = index
+        }
+      })
+
+      if (nextIndex !== this.activeCategoryIndex) {
+        this.activeCategoryIndex = nextIndex
+        this.scrollActiveCategoryIntoView()
+      }
+    },
+
+    scrollActiveCategoryIntoView() {
+      this.$nextTick(() => {
+        const categoryScroller = this.$refs.categoryScroller
+        const activeItem = categoryScroller?.querySelector(`[data-category-index="${this.activeCategoryIndex}"]`)
+        activeItem?.scrollIntoView({ block: 'nearest' })
+      })
+    },
+
+    saveHomeScrollPosition() {
+      this.homeScrollTop = this.$refs.goodsScroller?.scrollTop || 0
+      this.homeCategoryScrollTop = this.$refs.categoryScroller?.scrollTop || 0
+    },
+
+    restoreHomeScrollPosition() {
+      const goodsScroller = this.$refs.goodsScroller
+      const categoryScroller = this.$refs.categoryScroller
+
+      if (!goodsScroller) return
+
+      const goodsScrollBehavior = goodsScroller.style.scrollBehavior
+      const categoryScrollBehavior = categoryScroller?.style.scrollBehavior
+
+      this.isClickScrolling = true
+      window.clearTimeout(this.scrollTimer)
+      goodsScroller.style.scrollBehavior = 'auto'
+      if (categoryScroller) {
+        categoryScroller.style.scrollBehavior = 'auto'
+      }
+
+      goodsScroller.scrollTop = this.homeScrollTop
+      if (categoryScroller) {
+        categoryScroller.scrollTop = this.homeCategoryScrollTop
+      }
+
+      window.requestAnimationFrame(() => {
+        goodsScroller.style.scrollBehavior = goodsScrollBehavior
+        if (categoryScroller) {
+          categoryScroller.style.scrollBehavior = categoryScrollBehavior
+        }
+        this.isClickScrolling = false
+        this.syncCategoryFromScroll()
+      })
+    },
+
+    openDetail(item, categoryIndex = this.activeCategoryIndex) {
+      this.saveHomeScrollPosition()
+      this.activeCategoryIndex = categoryIndex
+      this.currentDetail = item
+      this.resetCalculator()
+    },
+
+    goBack() {
+      this.currentDetail = null
+      this.closeCalculator()
+      this.resetCalculator()
+      this.$nextTick(() => {
+        this.restoreHomeScrollPosition()
+      })
+    },
+
+    openCalculator() {
+      if (!this.canUseCalculator) return
+      this.isCalculatorOpen = true
+    },
+
+    closeCalculator() {
+      this.isCalculatorOpen = false
+    },
+
+    resetCalculator() {
+      this.calculatorBaseIndex = 0
+      this.calculatorInput = ''
+    },
+
+    normalizeCalculatorInput(event) {
+      this.calculatorInput = event.target.value.replace(/\D/g, '').slice(0, 5)
+    },
+
+    setCalculatorRatio(ratio) {
+      const baseGram = Number(this.selectedBaseItem.gram)
+      if (!baseGram) return
+      this.calculatorInput = String(Math.ceil(baseGram * ratio))
+    },
+
+    clearCalculator() {
+      this.calculatorInput = ''
+    },
+
+    pressPasswordKey(key) {
+      if (key === 'del') {
+        this.passwordInput = this.passwordInput.slice(0, -1)
+      } else if (this.passwordInput.length < PASSWORD_CONFIG.length) {
+        this.passwordInput += String(key)
+      }
+
+      this.checkPassword()
+    },
+
+    checkPassword() {
+      if (this.passwordInput.length !== PASSWORD_CONFIG.length) return
+
+      if (this.passwordInput === PASSWORD_CONFIG.value) {
+        this.passwordTip = '密码正确~'
+        this.passwordTipSuccess = true
+        window.setTimeout(() => {
+          this.setLoginStatus()
+          this.isUnlocked = true
+        }, 1000)
+        return
+      }
+
+      window.setTimeout(() => {
+        this.passwordInput = ''
+        this.passwordTipSuccess = false
+        this.passwordTip = this.passwordMessages[Math.floor(Math.random() * this.passwordMessages.length)]
+      }, 200)
+    },
+
+    setLoginStatus() {
+      localStorage.setItem('login_time', String(Date.now()))
+    },
+
+    isLoginValid() {
+      const loginTime = localStorage.getItem('login_time')
+      if (!loginTime) return false
+      return Date.now() < Number(loginTime) + PASSWORD_CONFIG.expireHour * 60 * 60 * 1000
+    },
+  },
+}).mount('#app')
