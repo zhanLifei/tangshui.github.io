@@ -150,7 +150,7 @@ let categoryList = [
       {
         id: 9,
         name: '糖水',
-        url: './image/img0.jpg',
+        url: './image/img71.jpg',
         remark: '0-5 度冰箱保存 5 天',
         materials: `<strong>材料：</strong>水4000克，白糖280克，煮沸即可。`,
         isCalculator: true,
@@ -412,7 +412,7 @@ let categoryList = [
       {
         id: 1,
         name: '龙眼冰底',
-        url: './image/img0.jpg',
+        url: './image/img36.jpg',
         remark: '',
         materials: `<strong>材料：</strong>牛奶100克，淡奶油20克，厚椰乳100克，龙眼肉500克。<br>
                     <strong>制作方法：</strong>取300克龙眼和牛奶料理机打均匀，剩下的200克龙眼肉放一起不锈钢盒子放冰箱急冻过夜，2个小时拿出来搅拌一次成冰沙为主。先牛奶和龙眼打碎再放其他`,
@@ -427,7 +427,7 @@ let categoryList = [
       {
         id: 2,
         name: '白雪冰底',
-        url: './image/img0.jpg',
+        url: './image/img37.jpg',
         remark: '',
         materials: `<strong>材料：</strong>牛奶165克，安佳奶油50克，糖浆20克，厚椰乳/(冷冻椰乳)30克，冰勃朗20克，椰浆30克<br>
                     <strong>制作方法：</strong>将所有的原材料倒在不锈钢盘中称好，然后搅拌均匀，冰冻2小时后搅拌一次，`,
@@ -444,7 +444,7 @@ let categoryList = [
       {
         id: 3,
         name: '椰奶底',
-        url: './image/img0.jpg',
+        url: './image/img61.jpg',
         remark: '0-5度冰箱保存3天',
         materials: `<strong>材料：</strong>300克糖水，200克椰浆，100克椰乳，300克牛奶，糖15克，炼奶10克，冰勃朗20克(可不加)，椰子粉20克，搅拌均匀`,
         isCalculator: true,
@@ -461,7 +461,7 @@ let categoryList = [
       {
         id: 4,
         name: '椰乳基底',
-        url: './image/img0.jpg',
+        url: './image/img61.jpg',
         remark: '0-5度冰箱保存3天',
         materials: `<strong>材料：</strong>产地椰乳250克，欧可生椰乳250克，高达椰浆200克`,
         isCalculator: true,
@@ -474,7 +474,7 @@ let categoryList = [
       {
         id: 5,
         name: '鲜牛奶底',
-        url: './image/img0.jpg',
+        url: './image/img56.jpg',
         remark: '0-5度冰箱保存2天',
         materials: `<strong>材料：</strong>吃甘蔗的水牛奶和鲜奶比列:500克:300克, 二者混合一起加入30克糖浆和50克炼奶增香(可以用朝日唯品水牛奶代替绢珊奶都可以，绢珊奶成本高一些)`,
         isCalculator: true,
@@ -511,7 +511,7 @@ let categoryList = [
       {
         id: 7,
         name: '榴莲系列基础奶底',
-        url: './image/img0.jpg',
+        url: './image/img64.jpg',
         remark: '0-5度冰箱保存2天',
         materials: `<strong>材料：</strong>榴莲肉60克，淡奶油20克，奶咖15克，奶100克，生椰乳70克，糖5克，全部材料一起加入料理机打均匀(45秒)。`,
         isCalculator: true,
@@ -527,7 +527,7 @@ let categoryList = [
       {
         id: 8,
         name: '榴莲系列基础奶底-榴莲奶油',
-        url: './image/img0.jpg',
+        url: './image/img64.jpg',
         remark: '0-5度冰箱保存2天',
         materials: `<strong>材料：</strong>奶油150克，8克糖, 榴莲肉15克，料理棒打粘稠，注意不要打太久会油水分离。注:打好后装入裱花袋冷藏。`,
         isCalculator: true,
@@ -540,7 +540,7 @@ let categoryList = [
       {
         id: 9,
         name: '榴莲系列基础奶底-河粉皮',
-        url: './image/img0.jpg',
+        url: './image/img64.jpg',
         remark: '-2-2度冰箱保存3天',
         materials: `<strong>材料：</strong>牛奶50克，水250克，白糖25克，椰浆75克，晶冻粉10克。全部搅拌均匀慢火加热沸腾后过筛，一勺的量大概100克左右放入碟子摊凉。`,
         isCalculator: true,
@@ -634,7 +634,7 @@ let categoryList = [
       {
         id: 5,
         name: '绢珊大满贯',
-        url: './image/img0.jpg',
+        url: './image/img68.jpg',
         remark: '',
         materials: `<strong>出餐标准: </strong>碗500毫升，芋圆12粒，莲子12粒，桃胶1勺，草冻10块，红豆一勺，鲜奶100毫升。`,
         isCalculator: true,
@@ -684,7 +684,7 @@ let categoryList = [
       {
         id: 8,
         name: '椰乳桂花茉莉大满贯',
-        url: './image/img0.jpg',
+        url: './image/img68.jpg',
         remark: '',
         materials: `器皿容量:500毫升，桂花冻2勺，一勺红豆，莲子8粒，芋圆10粒，倒入椰奶100毫升，椰子片点缀。`,
         isCalculator: true,
@@ -704,7 +704,7 @@ let categoryList = [
       {
         id: 1,
         name: '鲜百合',
-        url: './image/img0.jpg',
+        url: './image/img62.jpg',
         remark: '',
         materials: `<strong>材料：</strong>新鲜百合洗干净，50克百合，清水300克，冰糖15克。`,
         isCalculator: true,
@@ -717,7 +717,7 @@ let categoryList = [
       {
         id: 2,
         name: '花生仁',
-        url: './image/img0.jpg',
+        url: './image/img46.jpg',
         remark: '',
         materials: `<strong>材料：</strong>花生50克，加入少许水煮开就行.不要泡水, 去掉皮，加入1000克水，红糖粉冰糖各20克，上气后压20分钟。`,
         isCalculator: true,
@@ -731,7 +731,7 @@ let categoryList = [
       {
         id: 3,
         name: '蜜木薯',
-        url: './image/img0.jpg',
+        url: './image/img70.jpg',
         remark: '',
         materials: `<strong>材料：</strong>木薯500克，水是1500克，冰糖80克`,
         isCalculator: true,
@@ -744,7 +744,7 @@ let categoryList = [
       {
         id: 4,
         name: '蜜莲藕',
-        url: './image/img0.jpg',
+        url: './image/img55.jpg',
         remark: '',
         materials: `<strong>材料：</strong>莲藕500克，红糖粉60克，冰糖50克，麦芽糖20克，水850克`,
         isCalculator: true,
@@ -759,7 +759,7 @@ let categoryList = [
       {
         id: 5,
         name: '糯薏米',
-        url: './image/img0.jpg',
+        url: './image/img58.jpg',
         remark: '',
         materials: `<strong>材料：</strong>薏米50克，冰糖25克。水750克，高压锅上汽后压制20分钟。`,
         isCalculator: true,
@@ -772,7 +772,7 @@ let categoryList = [
       {
         id: 6,
         name: '蜜绿豆',
-        url: './image/img0.jpg',
+        url: './image/img55.jpg',
         remark: '放冷藏冰箱保质3天',
         materials: `<strong>材料：</strong>红豆200克，水600克，糖70克将所有材料倒入高压锅压制20分钟即可,时间到自己拔气。`,
         isCalculator: true,
@@ -785,7 +785,7 @@ let categoryList = [
       {
         id: 7,
         name: '牛奶麻薯',
-        url: './image/img0.jpg',
+        url: './image/img25.jpg',
         remark: '常温保存',
         materials: `<strong>材料：</strong>牛奶250克，奶油50克, 白砂糖10克, 一起搅拌均匀, 开中火搅拌用力打，后加12克黄油再打到拉丝状态。
                   <br><strong>注意：</strong>全部融化再开火`,
@@ -800,7 +800,7 @@ let categoryList = [
       {
         id: 8,
         name: '姜薯',
-        url: './image/img0.jpg',
+        url: './image/img69.jpg',
         remark: '',
         materials: `<strong>材料：</strong>姜薯, 先把水烧开，用刨皮刀刨成片状加入开水中煮到卷起来即可。`,
         isCalculator: true,
@@ -811,7 +811,7 @@ let categoryList = [
       {
         id: 9,
         name: '海石花',
-        url: './image/img0.jpg',
+        url: './image/img74.jpg',
         remark: '',
         materials: `<strong>材料：</strong>海石花25克，装入煲汤袋，加入清水1500克, 一勺白醋去腥，加入一小块冰糖去除咸味，盖上盖子煮开到上汽，再转小火煮40分钟。放凉备用
                     <br><strong>注意：</strong>先把海石花清洗干净,泡个2分钟, 海石花煮好就要过滤`,
@@ -830,7 +830,7 @@ let categoryList = [
       {
         id: 1,
         name: '腐竹薏米窝蛋糖水',
-        url: './image/img0.jpg',
+        url: './image/img46.jpg',
         remark: '0-5度冰箱保存3天',
         materials: `<strong>材料：</strong>桂平腐竹皮4片，水2500克，牛奶150克，燕麦奶200克，无糖豆浆粉120克，黄冰糖120克
                     <br><strong>制作方法：</strong>腐竹皮:清水泡10分钟，再过2次水备用，锅里倒入水烧开后加入豆浆粉，放入发泡好的腐竹皮，用勺子搅拌到开，容易糊底，小火熬30分钟后加入糖，牛奶，燕麦奶即可。
@@ -848,7 +848,7 @@ let categoryList = [
       {
         id: 2,
         name: '银耳汤',
-        url: './image/img0.jpg',
+        url: './image/img65.jpg',
         remark: '0-5度冰箱保存2天',
         materials: `<strong>材料：</strong>新鲜银耳200克，马蹄3个，水2000克，石蜂糖60克，黄冰糖80克。
                     <br><strong>制作方法：</strong>新鲜雪耳泡洗干净，剪掉底部，剪碎沥干水份，压力锅倒入所有材料压制15分钟，自动排气开盖后加入1000克热水搅拌均匀。`,
@@ -864,7 +864,7 @@ let categoryList = [
       {
         id: 3,
         name: '四果汤底',
-        url: './image/img0.jpg',
+        url: './image/img66.jpg',
         remark: '0-5度冰箱保存4天',
         materials: `水800克，白糖100克，金沙糖100克，黄冰糖100克，全部材料煮沸腾即可加入菠萝50克和蜂蜜50克。`,
         isCalculator: true,
@@ -880,7 +880,7 @@ let categoryList = [
       {
         id: 4,
         name: '冬瓜茶底',
-        url: './image/img0.jpg',
+        url: './image/img77.jpg',
         remark: '0-5度冰箱保存4天',
         materials: `冬瓜500克切小粒，黄冰糖15克，冬瓜糖120克压碎，红糖粉15克，全部加一起搅拌腌制3个小时，加入700毫升清水煮到冬瓜软烂。过滤出来加入1000克冰块即可。`,
         isCalculator: true,
@@ -896,7 +896,7 @@ let categoryList = [
       {
         id: 5,
         name: '古田银耳烤梨',
-        url: './image/img0.jpg',
+        url: './image/img67.jpg',
         remark: '-2至5度冰箱保存4天',
         materials: `<strong>品质选砀山梨或贡梨，特点:清甜多汁软糯</strong><br>
                     梨去皮挖梨芯去核，头尾削平(卖相好看)清洗干净<br>
@@ -920,7 +920,7 @@ let categoryList = [
       {
         id: 1,
         name: '雪花冰底',
-        url: './image/img0.jpg',
+        url: './image/img36.jpg',
         remark: '',
         materials: `<strong>材料：</strong>牛奶400克，粉30克，冰勃朗60克，生椰乳100克，炼乳60克，淡奶油60克，水150克，果糖30克
                     <br>抹茶冰底:在原基础的冰底550克上加入10克抹茶粉。`,
@@ -939,7 +939,7 @@ let categoryList = [
       {
         id: 2,
         name: '奶盖',
-        url: './image/img0.jpg',
+        url: './image/img43.jpg',
         remark: '',
         materials: `<strong>材料：</strong>奶油奶酪30g，砂糖12g，炼奶12g，牛奶50g，淡奶油90g，玫瑰盐适量
                     <br><strong>制作方法：</strong>除开淡奶油外其他材料放入干净量杯中(先单独打发奶油奶酪)，用料理棒打均匀放入冷藏备用，淡奶油单独打至裱花状，再跟备用的奶酪部分拌均匀即可。`,
@@ -954,7 +954,7 @@ let categoryList = [
       {
         id: 3,
         name: '万用奶浆',
-        url: './image/img0.jpg',
+        url: './image/img60.jpg',
         remark: '',
         materials: `<strong>材料：</strong>淡奶油25g，牛奶113g，炼奶20g
                     <br><strong>制作方法：</strong>所有材料一起用汤勺搅匀即可，冷藏可存2天`,
@@ -968,7 +968,7 @@ let categoryList = [
       {
         id: 4,
         name: '杏仁片',
-        url: './image/img0.jpg',
+        url: './image/img62.jpg',
         remark: '',
         materials: `烤箱上层180度，下层180度，烤箱烤12分钟。
                     <br>雪花冰装饰小料:脆波波，蛋卷碎，黄油脆片，杏仁片，西米龙珠，抹茶粉，巧克力粉，奥利奥碎，巧克力豆。
@@ -989,7 +989,7 @@ let categoryList = [
       {
         id: 1,
         name: '草莓雪葩',
-        url: './image/img0.jpg',
+        url: './image/img79.jpg',
         remark: '',
         materials: `<strong>材料：</strong>草莓250g,蓝莓100g,覆盆子100g,白砂糖45g,葡萄糖55g,聚葡萄糖22g,海藻糖50g,NH果胶2.5g,柠檬汁5g,伏特加10g,短链菊粉30g,水怡/麦芽糖浆50g,盐0.8g,稳定剂3g,水280g
                     <br><strong>制作方法：</strong>目标设计用水量和所有糖类，菊粉类，水怡类，粉类，吉利丁片等，先混合均质，再小火慢
@@ -1024,7 +1024,7 @@ let categoryList = [
       {
         id: 1,
         name: '芭乐气泡水',
-        url: './image/img0.jpg',
+        url: './image/img76.jpg',
         remark: '',
         materials: `<strong>材料：</strong>30g芭乐糖浆，5g黄柠檬汁(莫林)，芭乐果肉两片，气泡水200ml
                     <br><strong>制作方法：</strong>雪克壶加冰，加芭乐糖浆，柠檬汁，一片芭乐切成果肉，倒入一点气泡水搅和均匀后倒入出品杯，芭乐片装饰即可`,
@@ -1039,7 +1039,7 @@ let categoryList = [
       {
         id: 2,
         name: '葡萄气泡水',
-        url: './image/img0.jpg',
+        url: './image/img76.jpg',
         remark: '',
         materials: `<strong>材料：</strong>葡萄，葡萄汁(nfc)，柠檬糖(莫林)蔗糖，香水柠檬，气泡水
                     <br><strong>制作方法：</strong>雪克壶加入三颗葡萄加冰捶打，加入30ml葡萄汁，5g柠檬糖，10g蔗糖，搅拌均匀后倒入出品杯，气泡水补满，两片柠檬片装饰`,
@@ -1055,7 +1055,7 @@ let categoryList = [
       {
         id: 3,
         name: '经典柠檬茶',
-        url: './image/img0.jpg',
+        url: './image/img41.jpg',
         remark: '500毫升',
         materials: `<strong>材料：</strong>香水柠檬60g,红茶/茉莉绿茶/鸭屎香200g，果糖25g，柠檬汁(nfc)10g
                     <br><strong>制作方法：</strong>雪克壶中加入香水柠檬，少量冰块捶打出汁，倒入茶汤，果糖，冰到500ml,shake至气泡即可`,
@@ -1070,7 +1070,7 @@ let categoryList = [
       {
         id: 4,
         name: '鲜橙柠檬茶',
-        url: './image/img0.jpg',
+        url: './image/img41.jpg',
         remark: '500毫升',
         materials: `<strong>材料：</strong>新鲜橙子2片，橙子糖浆20g,香水柠檬2片，柠檬糖浆5g(莫林),茉莉绿茶200g，糖25g
                     <br><strong>制作方法：</strong>雪克壶中加入香水柠檬，香橙少量冰块捶打，倒入茶汤，果糖，冰补满500mlshake即可`,
@@ -1087,7 +1087,7 @@ let categoryList = [
       {
         id: 5,
         name: '黄皮柠檬茶',
-        url: './image/img0.jpg',
+        url: './image/img41.jpg',
         remark: '',
         materials: `<strong>材料：</strong>黄皮果肉5颗(热水解冻)，黄皮糖浆20g，香水柠檬2片，茉莉绿茶200g，果糖25g
                     <br><strong>制作方法：</strong>雪克壶中加入黄皮，柠檬，少量冰块，捶打出汁;倒入茶汤糖浆，果糖，冰到500摇匀`,
@@ -1103,7 +1103,7 @@ let categoryList = [
       {
         id: 6,
         name: '芭乐柠檬茶',
-        url: './image/img0.jpg',
+        url: './image/img41.jpg',
         remark: '',
         materials: `<strong>材料：</strong>香水柠檬2片，芭乐汁30ml,绿茶200ml，蔗糖5g，柠檬糖5g(莫林)，芭乐果肉2片
                     <br><strong>制作方法：</strong>柠檬两片，雪克杯加适量冰锤加芭乐汁绿茶糖冰摇晃均匀出`,
@@ -1125,7 +1125,7 @@ let categoryList = [
       {
         id: 1,
         name: '酸辣凤爪',
-        url: './image/img0.jpg',
+        url: './image/img80.jpg',
         remark: '',
         materials: `<strong>材料：</strong>凤爪5斤的量，双鱼米醋1000克，白醋100克，冰糖碎250克，白糖75克，鸡精100克，蚝油
                     140克，鲜露20克，老抽70克，酱油140克，剁椒酱50克，柠檬1.5个，蒜头3整个，小米辣50克
@@ -1152,7 +1152,7 @@ let categoryList = [
       {
         id: 2,
         name: '咖喱鱼蛋',
-        url: './image/img0.jpg',
+        url: './image/img53.jpg',
         remark: '',
         materials: `<strong>材料：</strong>鱼蛋250克，咖喱胆50克，水500克，椰浆30克。一勺诸侯将，一勺沙茶酱
                     <br><strong>制作方法：</strong>先把洋葱30克和蒜末15克加入少许油炒香后，把所有材料加一起煮沸。`,
@@ -1171,7 +1171,7 @@ let categoryList = [
       {
         id: 3,
         name: '潮汕酸野',
-        url: './image/img0.jpg',
+        url: './image/img81.jpg',
         remark: '',
         materials: `<strong>材料：</strong>甘草片:10-15克。咸梅/九制话梅:5-8颗。用咸梅汁更佳，能增加风味层次。
                     白砂糖/冰糖:100-150克。可以根据自己对甜度的喜好调整清水:700毫升。
@@ -1214,6 +1214,7 @@ createApp({
       homeScrollTop: 0,
       homeCategoryScrollTop: 0,
       currentDetail: null,
+      isAboutOpen: false,
       isCalculatorOpen: false,
       calculatorBaseIndex: 0,
       calculatorInput: '',
@@ -1416,11 +1417,21 @@ createApp({
 
     openCalculator() {
       if (!this.canUseCalculator) return
+      this.isAboutOpen = false
       this.isCalculatorOpen = true
     },
 
     closeCalculator() {
       this.isCalculatorOpen = false
+    },
+
+    openAbout() {
+      this.isCalculatorOpen = false
+      this.isAboutOpen = true
+    },
+
+    closeAbout() {
+      this.isAboutOpen = false
     },
 
     resetCalculator() {
